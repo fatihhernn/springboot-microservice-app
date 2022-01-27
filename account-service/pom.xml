@@ -10,7 +10,7 @@
         <artifactId>service-parent</artifactId>
         <groupId>com.fatihhernn</groupId>
         <version>10.0.1</version>
-        <relativePath>../service-parent/pom.xml</relativePath>
+        <relativePath/>
     </parent>
 
 

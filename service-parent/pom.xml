@@ -8,6 +8,7 @@
         <artifactId>microservice-app</artifactId>
         <groupId>com.fatihhernn</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -20,6 +21,12 @@
 
     <dependencies>
 
+        <!--
+        Kullandığımız mimaride birçok service var, bunlar configleri biryerde olması lazım
+        Herhangi bir serviste iş yükü arttıkça servislerdeki instance sayısını arttırırız
+        Bu farklı instancelar için ayrı ayrı config oluşturmak için bunları tek yerde toplamak için
+        springframework cloud sunduğu bir bileşendir config server
+        -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
