@@ -1,0 +1,1 @@
+yml dosyasını okur ve cassandrayı ayağa kaldırır :  docker-compose -f docker-compose.yml up -d
