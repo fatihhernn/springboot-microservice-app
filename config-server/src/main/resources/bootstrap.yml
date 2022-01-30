@@ -6,7 +6,7 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/microservice
+          search-locations: classpath:/microservice #classpath:/microservice load olacak..
 
   profiles:
     active: native
