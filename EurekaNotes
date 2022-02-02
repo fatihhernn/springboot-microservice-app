@@ -1,0 +1,14 @@
+Eureka servis neden var, neden kullanıyoruz ?
+ - elimizde api veya micro servislerimiz var bunların bir katalog oluşturması gerekiyor ver bilgisinin nerede durması gerektiğini gösteren yer
+kim hangi adreste, kaç tane instance var portu ne gibi
+
+Bu bilgileri biliyor olmamız ne işimize yarar ?
+ - account servis api isteği yapacak ve ticket servise erişmek isteyecek
+ - mq kullanarak bunu yapmak arasındaki iletişi saplayarak isteyebilir.
+ - tüm developmenti mq üzerinde yapıyor olmak development mantığı maliyetli olabilir.
+ - Account servis ticket hakkında bilgileri bilmiyor olacak, bu bilgiler eureka üzerinden gelecek
+
+ - load balancerda da yardımcı olacak
+ - her bir isteği 2 instance arasında sırasıyla paylaşacak -> raun robin algoritmasını sağlıyor bu eureka
+ - custom instance dağıtımı ayarları da yapılabilir.
+
