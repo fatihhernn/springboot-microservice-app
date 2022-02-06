@@ -1,14 +1,12 @@
 package com.fatihhernn.accountservice.api;
 
-import com.fatihhernn.accountservice.dto.AccountDto;
 import com.fatihhernn.accountservice.service.AccountService;
+import com.fatihhernn.client.contract.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("account")

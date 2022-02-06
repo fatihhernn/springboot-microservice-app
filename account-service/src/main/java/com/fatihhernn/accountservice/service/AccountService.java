@@ -1,8 +1,8 @@
 package com.fatihhernn.accountservice.service;
 
-import com.fatihhernn.accountservice.dto.AccountDto;
 import com.fatihhernn.accountservice.entity.Account;
 import com.fatihhernn.accountservice.repository.AccountRepository;
+import com.fatihhernn.client.contract.AccountDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;

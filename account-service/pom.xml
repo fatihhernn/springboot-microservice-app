@@ -71,6 +71,12 @@
             <version>2.3.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.fatihhernn</groupId>
+            <artifactId>service-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

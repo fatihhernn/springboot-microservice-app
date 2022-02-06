@@ -1,4 +1,4 @@
-package com.fatihhernn.accountservice.dto;
+package com.fatihhernn.client.contract;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +22,9 @@ public class AccountDto {
     private LocalDate birthDate;
 
     private String email;
+
+    public String getNameSurname(){
+        return this.name+" "+this.surname;
+    }
 
 }
