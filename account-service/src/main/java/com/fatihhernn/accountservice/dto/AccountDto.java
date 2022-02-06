@@ -19,7 +19,7 @@ public class AccountDto {
 
     private String surname;
 
-    private LocalDate dateOfBirth;
+    private LocalDate birthDate;
 
     private String email;
 

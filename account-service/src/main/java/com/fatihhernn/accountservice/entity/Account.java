@@ -34,7 +34,7 @@ public class Account implements Serializable {
 
     @Setter
     @Column(value = "birth_date")
-    private LocalDate dateOfBirth;
+    private LocalDate birthDate;
 
     @Setter
     @Column(value = "email")

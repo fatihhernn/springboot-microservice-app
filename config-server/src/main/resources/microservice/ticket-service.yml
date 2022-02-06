@@ -2,8 +2,19 @@ server:
   port: 8502
 
 spring:
-  qpplication:
+  application:
     name: ticket-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/microserviceapp
+    username: root
+    password: microservice-app
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
 
 eureka:
   client:
