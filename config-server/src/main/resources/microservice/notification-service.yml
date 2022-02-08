@@ -1,0 +1,31 @@
+server:
+  port: 8503
+
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    username: fatihhernn
+    password: fatihhernn
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: msqueue
+
+eureka:
+  client:
+    instance:
+      hostname: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8500/eureka/
+
+
+#spring.cloud.stream.bindings.input.destination=xxx
+#spring.cloud.stream.bindings.output.destination=xxx
+
+#output : kuyruğa girdi yapacak servis => ticket service olacak => burada rabbitmq için oluşturulan configurationlar ticket-servis.yml'de de olacak
+#input : kuyruğu dinleyen servis => notification service
+
+#buradaki
+

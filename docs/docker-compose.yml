@@ -21,3 +21,16 @@ services:
     - 9300:9300
     environment:
       discovery.type: single-node
+
+  msrabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'       #docker image'ın 5672 ile localde çalışılan makinanın 5672 portu ile eşleştirecek
+      - '15672:15672'     #bu port ise rabbitmq ise bize bir arayüz sağlayacak ve bu arayüzün env variable'ları aşağıdaki bilgiler doğrultusunda giriş yapılacak
+    environment:
+      - RABBITMQ_DEFAULT_USER=fatihhernn
+      - RABBITMQ_DEFAULT_PASS=fatihhernn
+
+
+
+

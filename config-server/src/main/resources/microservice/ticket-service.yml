@@ -16,7 +16,19 @@ spring:
     hibernate:
       ddl-auto: update
 
+  rabbitmq:
+    username: fatihhernn
+    password: fatihhernn
+
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: msqueue
+
 eureka:
   client:
+    instance:
+      hostname: localhost
     serviceUrl:
       defaultZone: http://localhost:8500/eureka/

@@ -9,6 +9,7 @@ import com.fatihhernn.ticketservice.model.TicketStatus;
 import com.fatihhernn.ticketservice.model.elastic.TicketModel;
 import com.fatihhernn.ticketservice.repository.TicketRepository;
 import com.fatihhernn.ticketservice.repository.elastic.TicketElasticRepository;
+import com.fatihhernn.ticketservice.service.TicketNotificationService;
 import com.fatihhernn.ticketservice.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -24,7 +25,7 @@ public class TicketServiceImpl implements TicketService {
 
     private final TicketElasticRepository ticketElasticRepository;
     private final TicketRepository ticketRepository;
-    private final ModelMapper modelMapper;
+    private final TicketNotificationService ticketNotificationService;
     private final AccountServiceClient accountServiceClient;
 
     @Override
@@ -66,6 +67,9 @@ public class TicketServiceImpl implements TicketService {
 
         //oluşan nesneyi döndür.
         ticketDto.setId(ticket.getId());
+
+        //kuyruğa notification yazz.
+        ticketNotificationService.sendToQueue(ticket);
 
         return ticketDto;
     }
