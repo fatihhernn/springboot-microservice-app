@@ -10,7 +10,7 @@
         <artifactId>service-parent</artifactId>
         <groupId>com.fatihhernn</groupId>
         <version>10.0.1</version>
-        <relativePath/>
+        <relativePath>../service-parent/pom.xml</relativePath>
     </parent>
 
 
@@ -75,6 +75,11 @@
             <groupId>com.fatihhernn</groupId>
             <artifactId>service-common</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
 
     </dependencies>

@@ -1,0 +1,47 @@
+Parent olarak eski bir sürüm ekledik
+ <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+zipkin servisimize dependencyler olarak ;
+<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--Undertow server kullanacak burası o yüzden tomcat'i exclude ediyoruz-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
+            <version>2.11.7</version>
+        </dependency>
+
+        UI İÇİN BİR BAĞIMLILIK
+
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
+            <version>2.11.7</version>
+        </dependency>
+    </dependencies>
+
+ diğer servislerin zipkini kullanabilmesi için    aşağıdaki sadece dependency ekle ve daha sonra config'de MICROSERVİCE YML içerisinde zipkin adreslerini yapmak zorundayız
+ <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        1.eureka ekledim çünkü load balancer yaparken servislerin dağılımını takip edecek
+
+
+      spring:zipkin:base-url: http://localhost:9411
